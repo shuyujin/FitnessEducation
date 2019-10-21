@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="ClubNewsListTableCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_icon" translatesAutoresizingMaskIntoConstraints="NO" id="AH6-hj-9LB">
+                        <rect key="frame" x="230" y="22" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="4Ts-pf-Dqt"/>
+                            <constraint firstAttribute="height" constant="70" id="e6t-hk-atQ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCd-8p-H5t">
+                        <rect key="frame" x="20" y="22" width="200" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQO-1S-Ul4">
+                        <rect key="frame" x="20" y="54" width="200" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="AQO-1S-Ul4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="8eB-Vv-39A"/>
+                    <constraint firstItem="AH6-hj-9LB" firstAttribute="leading" secondItem="AQO-1S-Ul4" secondAttribute="trailing" constant="10" id="956-UM-PfF"/>
+                    <constraint firstItem="AH6-hj-9LB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ksk-B4-7CZ"/>
+                    <constraint firstItem="uCd-8p-H5t" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="Kwe-Ru-jec"/>
+                    <constraint firstItem="AQO-1S-Ul4" firstAttribute="top" secondItem="uCd-8p-H5t" secondAttribute="bottom" constant="15" id="Sfj-hb-2lx"/>
+                    <constraint firstItem="AH6-hj-9LB" firstAttribute="leading" secondItem="uCd-8p-H5t" secondAttribute="trailing" constant="10" id="aC9-M2-llx"/>
+                    <constraint firstItem="uCd-8p-H5t" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="bBF-3m-fve"/>
+                    <constraint firstAttribute="trailing" secondItem="AH6-hj-9LB" secondAttribute="trailing" constant="20" id="c4X-8Y-ahZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="detailLabel" destination="AQO-1S-Ul4" id="Yzs-01-uJ9"/>
+                <outlet property="newsImageView" destination="AH6-hj-9LB" id="JwH-yA-SfJ"/>
+                <outlet property="titleLabel" destination="uCd-8p-H5t" id="eTF-go-6ip"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="login_icon" width="38" height="38"/>
+    </resources>
+</document>

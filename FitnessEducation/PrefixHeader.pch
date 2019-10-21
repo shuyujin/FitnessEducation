@@ -1,0 +1,88 @@
+//
+//  PrefixHeader.pch
+//  FitnessEducation
+//
+//  Created by wld-Janek on 2019/2/26.
+//  Copyright © 2019 Janek. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "Utils.h"
+#import "LSDataService.h"
+#import <YYModel.h>
+#import "UIColor+WLDColor.h"
+#import "UIFont+WLDFont.h"
+#import "UIViewExt.h"
+
+#ifdef DEBUG
+
+/****  debug log **/ //DNSLog输出信息
+#define DNSLog(...) NSLog(__VA_ARGS__)
+
+#else
+
+#define DNSLog(...);
+
+#endif
+
+
+/**
+ *   判断是否是初次安装或更新
+ */
+#define APP_Delegate [[UIApplication sharedApplication] delegate]
+#define CURRENT_APP_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
+//颜色
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+/*** MainScreen Height Width */
+#define Main_Screen_Height [[UIScreen mainScreen] bounds].size.height //主屏幕的高度
+#define Main_Screen_Width  [[UIScreen mainScreen] bounds].size.width  //主屏幕的宽度
+
+//根据屏幕大小设置statusBar高度
+#define STATUSBAR_HEIGHT [[UIApplication sharedApplication] statusBarFrame].size.height
+
+//根据屏幕大小设置视图顶部高度
+#define VIEW_TOP ([[UIApplication sharedApplication] statusBarFrame].size.height + 44.5)
+
+//tabarBar高度
+#define TABBAR_HEIGHT (IS_HEIGHT ? 83 : 49)
+
+//x的小下巴高度
+#define HOMEBAR_HEIGHT (IS_HEIGHT ? 34 : 0)
+
+#define IS_HEIGHT  (IS_5_8 | IS_6_1 | IS_6_5)//适配刘海
+
+//防止循环引用 weakSelf
+#define WEAKSELF typeof(self) __weak weakSelf = self;
+
+//配合使用  strongSelf    需判断   if (strongSelf) {//do something}
+#define STRONGSELF  __strong typeof(self) strongSelf = weakSelf;
+
+//设备系统
+#define ios8 ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0)
+#define ios9 ([[UIDevice currentDevice].systemVersion floatValue] >= 9.0)
+#define ios10 ([[UIDevice currentDevice].systemVersion floatValue] >= 10.0)
+#define ios11 ([[UIDevice currentDevice].systemVersion floatValue] >= 11.0)
+
+#define IS_3_5                ([UIScreen mainScreen].bounds.size.height == 480)
+
+#define IS_4_0                 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define IS_4_7                 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define IS_5_5                 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define IS_5_8                 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define IS_6_1                 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define IS_6_5                 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#endif /* PrefixHeader_pch */
